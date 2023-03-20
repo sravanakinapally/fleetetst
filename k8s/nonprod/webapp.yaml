@@ -1,0 +1,14 @@
+apiVersion: runway.aa.com/v1alpha1
+kind: WebApp
+metadata:
+  annotations:
+    enableCloudIngress: "true" # Optional - Must be a string that is true/false so include quotes
+  name: test01
+  namespace: test01
+spec:
+  containerName: packages.aa.com/docker-all/paulbouwer/hello-kubernetes
+  containerTag: "1.8"
+  port: 8080
+  autoscale:
+    minimum: 1
+    maximum: 3
